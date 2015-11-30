@@ -2,6 +2,7 @@ execute pathogen#infect()
 
 filetype plugin indent on
 syntax on
+colorscheme monokai
 
 set autoindent
 set smartindent

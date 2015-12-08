@@ -4,6 +4,21 @@ filetype plugin indent on
 syntax enable
 colorscheme monokai
 
+let mapleader = ";"
+
+set statusline=[%{getcwd()}]\ 
+set statusline+=%t\ 
+set statusline+=%y
+set statusline+=[%{strlen(&fenc)?&fenc:'none'},%{&ff}]
+set statusline+=%h
+set statusline+=%#identifier#
+set statusline+=%m
+set statusline+=%*
+set statusline+=%r
+set statusline+=%=
+set statusline+=%c,%l/%L\ %P
+set statusline+=\ %{StatuslineCurrentHighlight()}
+
 set autoindent
 set smartindent
 set expandtab
@@ -36,7 +51,7 @@ endif
 "set undofile
 set pastetoggle=<F2>
 if has("mouse")
-set mouse=a
+    set mouse=a
 endif
 set ignorecase
 set smartcase

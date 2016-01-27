@@ -61,25 +61,25 @@ set hlsearch
 set wildignore+=.git
 
 " x deletes text by putting it into the blackhole register _ 
-noremap x "_x 
-noremap X "_X 
+noremap x "_x
+noremap X "_X
   
 " cut/copy and paste (read: dont yank on paste) 
-vnoremap p "_xP 
+vnoremap p "_xP
    
 " cut/copy paste from clipboard 
-vnoremap <leader>y "+y 
-nnoremap <leader>p "+p 
-vnoremap <leader>p "+p 
-nnoremap <leader>P "+P 
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+nnoremap <leader>P "+P
     
 " text formatting 
-vnoremap < <gv 
-vnoremap > >gv 
-vnoremap <leader>t :Tabularize/ 
+vnoremap < <gv
+vnoremap > >gv
+vnoremap <leader>t :Tabularize/
      
 " close all buffers 
-nnoremap <leader>q :bufdo bd<cr> 
+nnoremap <leader>q :bufdo bd<cr>
 
 if exists("+showtabline")
   function! MyTabLine()

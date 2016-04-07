@@ -17,7 +17,6 @@ set statusline+=%*
 set statusline+=%r
 set statusline+=%=
 set statusline+=%c,%l/%L\ %P
-set statusline+=\ %{StatuslineCurrentHighlight()}
 
 set autoindent
 set smartindent

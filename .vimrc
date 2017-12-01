@@ -119,3 +119,6 @@ if exists("+showtabline")
   set tabline=%!MyTabLine()
 endif
 nnoremap <leader>c :bd<cr>
+
+" Detect tt files
+au BufNewFile,BufRead *.tt setf tt2html

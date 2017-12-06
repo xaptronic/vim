@@ -122,3 +122,4 @@ nnoremap <leader>c :bd<cr>
 
 " Detect tt files
 au BufNewFile,BufRead *.tt setf tt2html
+au BufNewFile,BufRead *.jade set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab

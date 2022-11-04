@@ -2,7 +2,6 @@ execute pathogen#infect()
 
 filetype plugin indent on
 syntax enable
-colorscheme monokai
 
 let mapleader = ";"
 
@@ -75,7 +74,6 @@ nnoremap <leader>P "+P
 " text formatting 
 vnoremap < <gv
 vnoremap > >gv
-vnoremap <leader>t :Tabularize/
      
 " close all buffers 
 nnoremap <leader>q :bufdo bd<cr>

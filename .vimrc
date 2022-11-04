@@ -3,10 +3,12 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax enable
 
+colorscheme tender
+
 let mapleader = ";"
 
-set statusline=[%{getcwd()}]\ 
-set statusline+=%t\ 
+set statusline=[%{getcwd()}]\
+set statusline+=%t\
 set statusline+=%y
 set statusline+=[%{strlen(&fenc)?&fenc:'none'},%{&ff}]
 set statusline+=%h
@@ -58,24 +60,24 @@ set showmatch
 set hlsearch
 set wildignore+=.git
 
-" x deletes text by putting it into the blackhole register _ 
+" x deletes text by putting it into the blackhole register _
 noremap x "_x
 noremap X "_X
-  
-" cut/copy and paste (read: dont yank on paste) 
+
+" cut/copy and paste (read: dont yank on paste)
 vnoremap p "_xP
-   
-" cut/copy paste from clipboard 
+
+" cut/copy paste from clipboard
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 nnoremap <leader>P "+P
-    
-" text formatting 
+
+" text formatting
 vnoremap < <gv
 vnoremap > >gv
-     
-" close all buffers 
+
+" close all buffers
 nnoremap <leader>q :bufdo bd<cr>
 
 if exists("+showtabline")
@@ -121,3 +123,13 @@ nnoremap <leader>c :bd<cr>
 " Detect tt files
 au BufNewFile,BufRead *.tt setf tt2html
 au BufNewFile,BufRead *.jade set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+au BufWritePre * :%s/\s\+$//e
+
+function TrimEndLines()
+    let save_cursor = getpos(".")
+    silent! %s#\($\n\s*\)\+\%$##
+    call setpos('.', save_cursor)
+endfunction
+au BufWritePre * call TrimEndLines()
+

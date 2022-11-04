@@ -4,3 +4,6 @@
 [submodule "bundle/vim-autocose"]
 	path = bundle/vim-autocose
 	url = https://github.com/Townk/vim-autoclose.git
+[submodule "bundle/tender.vim"]
+	path = bundle/tender.vim
+	url = https://github.com/jacoborus/tender.vim
